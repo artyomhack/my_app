@@ -1,0 +1,31 @@
+buildscript {
+    ext {
+        springBootVersion = "2.6.6"
+        lombokVersion = "1.18.20"
+        flyWayVersion = "7.5.0"
+    }
+
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion")
+    }
+}
+
+subprojects {
+
+    repositories {
+        mavenCentral()
+    }
+
+    apply plugin:'java-library'
+
+    dependencies {
+        api platform("org.springframework.boot:spring-boot-dependencies:$springBootVersion")
+        implementation "org.projectlombok:lombok:$lombokVersion"
+        annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+    }
+}

@@ -1,0 +1,8 @@
+rootProject.name = 'my_app'
+
+include(":data")
+include 'application'
+include 'data'
+include 'domain'
+include 'presenter'
+
